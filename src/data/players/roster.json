@@ -1,0 +1,32 @@
+[
+  {
+    "player": "KSCERATO",
+    "age": "25",
+    "country": "Brasil",
+    "photo": "https://img-cdn.hltv.org/playerbodyshot/U6t0j2bJDKUR3mTI8rIqv7.png?ixlib=java-2.1.0&w=400&s=b5257c378b8122f415f21985855e95ca"
+  },
+  {
+    "player": "FalleN",
+    "age": "33",
+    "country": "Brasil",
+    "photo": "https://img-cdn.hltv.org/playerbodyshot/Wf26SO_o8nvnsLh0AqZXc5.png?ixlib=java-2.1.0&w=400&s=36b7189a4ae7b020d0acb087fd44777a"
+  },
+  {
+    "player": "yuurih",
+    "age": "25",
+    "country": "Brasil",
+    "photo": "https://img-cdn.hltv.org/playerbodyshot/i6UGhkYxrhutAOmWZT0-8O.png?ixlib=java-2.1.0&w=400&s=2cd696f6ff4baf5680a43d537214b6eb"
+  },
+  {
+    "player": "molodoy",
+    "age": "20",
+    "country": "Cazaquistão",
+    "photo": "https://img-cdn.hltv.org/playerbodyshot/qNyAd_xVHTTmbCAKPx-jPk.png?ixlib=java-2.1.0&w=400&s=b128ede878e462107c70590202b14139"
+  },
+  {
+    "player": "YEKINDAR",
+    "age": "24",
+    "country": "Letônia",
+    "photo": "https://img-cdn.hltv.org/playerbodyshot/rRclDPBXIMxFv2fv0dV0J0.png?ixlib=java-2.1.0&w=400&s=2b0f6209ca40efa081852b9d1d8e01c1"
+  }
+]

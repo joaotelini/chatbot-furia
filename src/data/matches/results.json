@@ -1,0 +1,127 @@
+[
+  {
+    "event": "PGL Bucharest 2025",
+    "against": "Betclic",
+    "date": "06/04/2025",
+    "bo3": [
+      {
+        "map": [
+          {
+            "name": "Dust2",
+            "result": "win",
+            "score": [
+              13,
+              6
+            ],
+            "stats": "https://www.hltv.org/stats/matches/mapstatsid/197263/betclic-vs-furia"
+          },
+          {
+            "name": "Mirage",
+            "result": "win",
+            "score": [
+              13,
+              7
+            ],
+            "stats": "https://www.hltv.org/stats/matches/mapstatsid/197265/betclic-vs-furia"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event": "PGL Bucharest 2025",
+    "against": "Complexity",
+    "date": "07/04/2025",
+    "bo3": [
+      {
+        "map": [
+          {
+            "name": "Dust2",
+            "result": "win",
+            "score": [
+              13,
+              8
+            ],
+            "stats": "https://www.hltv.org/stats/matches/mapstatsid/197295/complexity-vs-furia"
+          },
+          {
+            "name": "Train",
+            "result": "lose",
+            "score": [
+              1,
+              13
+            ],
+            "stats": "https://www.hltv.org/stats/matches/mapstatsid/197297/complexity-vs-furia"
+          },
+          {
+            "name": "Inferno",
+            "result": "lose",
+            "score": [
+              4,
+              13
+            ],
+            "stats": "https://www.hltv.org/stats/matches/mapstatsid/197298/complexity-vs-furia"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event": "PGL Bucharest 2025",
+    "against": "Virtus.pro",
+    "date": "08/04/2025",
+    "bo3": [
+      {
+        "map": [
+          {
+            "name": "Anubis",
+            "result": "lose",
+            "score": [
+              11,
+              13
+            ],
+            "stats": "https://www.hltv.org/stats/matches/mapstatsid/197330/furia-vs-virtuspro"
+          },
+          {
+            "name": "Dust2",
+            "result": "lose",
+            "score": [
+              8,
+              13
+            ],
+            "stats": "https://www.hltv.org/stats/matches/mapstatsid/197337/virtuspro-vs-furia"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event": "PGL Bucharest 2025",
+    "against": "The MongolZ",
+    "date": "09/04/2025",
+    "bo3": [
+      {
+        "map": [
+          {
+            "name": "Mirage",
+            "result": "lose",
+            "score": [
+              9,
+              13
+            ],
+            "stats": "https://www.hltv.org/stats/matches/mapstatsid/197435/furia-vs-the-mongolz"
+          },
+          {
+            "name": "Nuke",
+            "result": "win",
+            "score": [
+              11,
+              13
+            ],
+            "stats": "https://www.hltv.org/stats/matches/mapstatsid/197437/the-mongolz-vs-furia"
+          }
+        ]
+      }
+    ]
+  }
+]
