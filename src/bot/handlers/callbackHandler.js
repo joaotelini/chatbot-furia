@@ -1,4 +1,5 @@
 import { sendNews } from "../commands/news.js";
+import { sendRanking } from "../commands/ranking.js";
 
 export function callbackHandler(bot) {
   // Tratar quando o botão "Próximos Jogos" for clicado
@@ -29,6 +30,7 @@ export function callbackHandler(bot) {
         break;
       case "ranking":
         await bot.sendMessage(chatId, "Aqui está o ranking atual da FURIA na HLTV...");
+        sendRanking(bot, chatId);
         break;
       case "ajuda":
         await bot.sendMessage(chatId, "Aqui está como usar o bot...");

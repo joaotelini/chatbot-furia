@@ -3,7 +3,8 @@ export function menuCommand(bot) {
     const chatId = msg.chat.id;
 
     const menuMessage = `
-  🔥 *Bem-vindo ao menu da Pantera!* 🔥Escolha uma das opções abaixo para explorar tudo sobre a FURIA Esports:
+  🔥 *Bem-vindo ao menu da Pantera!* 🔥
+Escolha uma das opções abaixo para explorar tudo sobre a FURIA Esports:
   `;
 
     const keyboard = {

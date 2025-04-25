@@ -6,7 +6,7 @@ export function newsCommand(bot) {
 }
 
 export function sendNews(bot, chatId) {
-  const news = `
+  const message = `
 "📰 *FURIA confirma adição de YEKINDAR!*"
 
 A *FURIA* anunciou nesta terça-feira (22) a chegada de *Mareks "YEKINDAR" Gaļinskis*! 🇱🇻🔥
@@ -33,5 +33,5 @@ Ele substituirá *Felipe "skullz" Medeiros*, movido ao banco no mesmo dia, refor
 🎯 *Coach:* Sidnei "sidde" Macedo
 `;
 
-  bot.sendMessage(chatId, news, { parse_mode: "Markdown" });
+  bot.sendMessage(chatId, message, { parse_mode: "Markdown" });
 }
