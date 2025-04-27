@@ -1,6 +1,7 @@
 import { sendNews } from "../commands/news.js";
 import { sendRanking } from "../commands/ranking.js";
-import { menuCommand, sendMenu } from "../commands/menu.js";
+import { sendMenu } from "../commands/menu.js";
+import { sendBackButton } from "../utils/sendBackButton.js";
 
 export function callbackHandler(bot) {
   bot.on("callback_query", async (callbackQuery) => {
@@ -18,21 +19,26 @@ export function callbackHandler(bot) {
           chatId,
           "Aqui estão os próximos jogos da FURIA..."
         );
+        sendBackButton(bot, chatId);
         break;
       case "resultados":
         await bot.sendMessage(
           chatId,
           "Aqui estão os resultados recentes da FURIA..."
         );
+        sendBackButton(bot, chatId);
         break;
       case "roster":
         await bot.sendMessage(chatId, "Aqui está a lineup atual da FURIA...");
+        sendBackButton(bot, chatId);
         break;
       case "players":
         await bot.sendMessage(
           chatId,
           "Aqui está a lista dos jogadores da FURIA..."
         );
+
+        sendBackButton(bot, chatId);
         break;
       case "noticias":
         await bot.sendMessage(
@@ -41,23 +47,11 @@ export function callbackHandler(bot) {
         );
         sendNews(bot, chatId);
 
-        const backButton = {
-          reply_markup: {
-            inline_keyboard: [
-              [{ text: "🔙 Voltar ao Menu", callback_data: "voltar_menu" }],
-            ],
-          },
-          parse_mode: "Markdown",
-        };
-
-        await bot.sendMessage(
-          chatId,
-          "Clique no botão abaixo para voltar ao menu:",
-          backButton
-        );
+        sendBackButton(bot, chatId);
         break;
       case "historia":
         await bot.sendMessage(chatId, "Aqui está a história da FURIA...");
+        sendBackButton(bot, chatId);
         break;
       case "ranking":
         await bot.sendMessage(
@@ -65,15 +59,18 @@ export function callbackHandler(bot) {
           "Aqui está o ranking atual da FURIA na HLTV..."
         );
         sendRanking(bot, chatId);
+        sendBackButton(bot, chatId);
         break;
       case "ajuda":
         await bot.sendMessage(chatId, "Aqui está como usar o bot...");
+        sendBackButton(bot, chatId);
         break;
       case "contato":
         await bot.sendMessage(
           chatId,
           "Aqui estão as informações de contato..."
         );
+        sendBackButton(bot, chatId);
         break;
       default:
         await bot.sendMessage(chatId, "Escolha uma opção válida.");
