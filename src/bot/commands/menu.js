@@ -20,13 +20,13 @@ export function sendMenu(bot, chatId) {
         ],
         [
           { text: "👥 Lineup Atual", callback_data: "roster" },
-          { text: "🎯 Jogadores", callback_data: "players" },
+          { text: "🏆 Ranking HLTV", callback_data: "ranking" },
         ],
         [
           { text: "📰 Últimas Notícias", callback_data: "noticias" },
           { text: "📖 História da FURIA", callback_data: "historia" },
         ],
-        [{ text: "🏆 Ranking HLTV", callback_data: "ranking" }],
+
         [
           { text: "❓ Ajuda", callback_data: "ajuda" },
           { text: "📨 Contato", callback_data: "contato" },
