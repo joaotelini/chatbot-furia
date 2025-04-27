@@ -2,6 +2,9 @@ import { sendNews } from "../commands/news.js";
 import { sendRanking } from "../commands/ranking.js";
 import { sendMenu } from "../commands/menu.js";
 import { sendBackButton } from "../utils/sendBackButton.js";
+import { sendHelp } from "../commands/help.js";
+import { sendHistory } from "../commands/history.js";
+import { sendContact } from "../commands/contact.js";
 
 export function callbackHandler(bot) {
   bot.on("callback_query", async (callbackQuery) => {
@@ -12,8 +15,10 @@ export function callbackHandler(bot) {
     switch (callbackData) {
       case "voltar_menu":
         await bot.sendMessage(chatId, "Voltando ao menu...");
+
         sendMenu(bot, chatId);
         break;
+
       case "jogos":
         await bot.sendMessage(
           chatId,
@@ -21,17 +26,22 @@ export function callbackHandler(bot) {
         );
         sendBackButton(bot, chatId);
         break;
+
       case "resultados":
         await bot.sendMessage(
           chatId,
           "Aqui estão os resultados recentes da FURIA..."
         );
+
         sendBackButton(bot, chatId);
         break;
+
       case "roster":
         await bot.sendMessage(chatId, "Aqui está a lineup atual da FURIA...");
+
         sendBackButton(bot, chatId);
         break;
+
       case "players":
         await bot.sendMessage(
           chatId,
@@ -40,6 +50,7 @@ export function callbackHandler(bot) {
 
         sendBackButton(bot, chatId);
         break;
+
       case "noticias":
         await bot.sendMessage(
           chatId,
@@ -48,30 +59,48 @@ export function callbackHandler(bot) {
         sendNews(bot, chatId);
 
         sendBackButton(bot, chatId);
+
         break;
+
       case "historia":
         await bot.sendMessage(chatId, "Aqui está a história da FURIA...");
+
+        sendHistory(bot, chatId);
+
         sendBackButton(bot, chatId);
+
         break;
+
       case "ranking":
         await bot.sendMessage(
           chatId,
           "Aqui está o ranking atual da FURIA na HLTV..."
         );
         sendRanking(bot, chatId);
+
         sendBackButton(bot, chatId);
+
         break;
+
       case "ajuda":
         await bot.sendMessage(chatId, "Aqui está como usar o bot...");
+        sendHelp(bot, chatId);
+
         sendBackButton(bot, chatId);
+
         break;
+
       case "contato":
         await bot.sendMessage(
           chatId,
           "Aqui estão as informações de contato..."
         );
+        sendContact(bot, chatId);
+
         sendBackButton(bot, chatId);
+
         break;
+
       default:
         await bot.sendMessage(chatId, "Escolha uma opção válida.");
     }

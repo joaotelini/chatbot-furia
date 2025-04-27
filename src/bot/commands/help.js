@@ -26,14 +26,5 @@ export async function sendHelp(bot, chatId) {
   Boa sorte e divirta-se! 🔥
 `;
 
-  const keyboard = {
-    reply_markup: {
-      inline_keyboard: [
-        [{ text: "🔙 Voltar ao Menu", callback_data: "voltar_menu" }],
-      ],
-    },
-    parse_mode: "Markdown",
-  };
-
   bot.sendMessage(chatId, helpMessage, keyboard);
 }
