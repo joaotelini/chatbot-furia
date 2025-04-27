@@ -26,5 +26,5 @@ export async function sendHelp(bot, chatId) {
   Boa sorte e divirta-se! 🔥
 `;
 
-  bot.sendMessage(chatId, helpMessage, keyboard);
+  bot.sendMessage(chatId, helpMessage);
 }

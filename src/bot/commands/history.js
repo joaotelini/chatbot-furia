@@ -20,5 +20,5 @@ Fundada em agosto de 2017 em Uberlândia, Minas Gerais, a FURIA nasceu da visão
 FURIA: do esports ao esporte tradicional, sempre representando! 🐾🔥
   `;
 
-  bot.sendMessage(chatId, message, keyboard);
+  bot.sendMessage(chatId, message);
 }
