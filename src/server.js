@@ -7,11 +7,13 @@ import { newsCommand } from "./bot/commands/news.js";
 import { rankingCommand } from "./bot/commands/ranking.js";
 import { startCommand } from "./bot/commands/start.js";
 import { callbackHandler } from "./bot/handlers/callbackHandler.js";
+import { helpCommand } from "./bot/commands/help.js";
 
 const startBot = () => {
   const token = process.env.TELEGRAM_TOKEN;
   const bot = new TelegramBot(token, { polling: true });
 
+  helpCommand(bot);
   menuCommand(bot);
   startCommand(bot);
   rankingCommand(bot);
