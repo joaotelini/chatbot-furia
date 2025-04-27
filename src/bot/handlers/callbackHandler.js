@@ -5,6 +5,7 @@ import { sendBackButton } from "../utils/sendBackButton.js";
 import { sendHelp } from "../commands/help.js";
 import { sendHistory } from "../commands/history.js";
 import { sendContact } from "../commands/contact.js";
+import { sendNextMatch } from "../commands/nextmatch.js";
 
 export function callbackHandler(bot) {
   bot.on("callback_query", async (callbackQuery) => {
@@ -24,6 +25,7 @@ export function callbackHandler(bot) {
           chatId,
           "Aqui estão os próximos jogos da FURIA..."
         );
+        sendNextMatch(bot, chatId);
         sendBackButton(bot, chatId);
         break;
 

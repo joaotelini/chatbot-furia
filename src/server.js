@@ -9,12 +9,14 @@ import { startCommand } from "./bot/commands/start.js";
 import { callbackHandler } from "./bot/handlers/callbackHandler.js";
 import { helpCommand } from "./bot/commands/help.js";
 import { historyCommand } from "./bot/commands/history.js";
+import { nextMatchCommand } from "./bot/commands/nextmatch.js";
 
 const startBot = () => {
   const token = process.env.TELEGRAM_TOKEN;
   const bot = new TelegramBot(token, { polling: true });
 
   helpCommand(bot);
+  nextMatchCommand(bot);
   contactCommand(bot);
   menuCommand(bot);
   startCommand(bot);
