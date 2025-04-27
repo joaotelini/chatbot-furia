@@ -10,6 +10,7 @@ import { callbackHandler } from "./bot/handlers/callbackHandler.js";
 import { helpCommand } from "./bot/commands/help.js";
 import { historyCommand } from "./bot/commands/history.js";
 import { nextMatchCommand } from "./bot/commands/nextmatch.js";
+import { resultsCommands } from "./bot/commands/results.js";
 
 const startBot = () => {
   const token = process.env.TELEGRAM_TOKEN;
@@ -17,6 +18,7 @@ const startBot = () => {
 
   helpCommand(bot);
   nextMatchCommand(bot);
+  resultsCommands(bot);
   contactCommand(bot);
   menuCommand(bot);
   startCommand(bot);

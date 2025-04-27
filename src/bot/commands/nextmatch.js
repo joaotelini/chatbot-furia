@@ -1,4 +1,4 @@
-import { getNextMatch } from "../../bot/services/apiFuria.js";
+import { getNextMatch } from "../services/apiFuria.js";
 
 export async function nextMatchCommand(bot) {
   bot.onText(/\/proximojogo/, async (msg) => {
