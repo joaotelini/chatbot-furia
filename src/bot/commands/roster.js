@@ -25,12 +25,14 @@ export async function sendRoster(bot, chatId) {
     .join("\n");
 
   const keyboard = {
-    inline_keyboard: rosterData.map((player) => [
-      {
-        text: player.player,
-        callback_data: `player_${player.player}`,
-      },
-    ]),
+    inline_keyboard: [
+      ...rosterData.map((player) => [
+        {
+          text: player.player,
+          callback_data: `player_${player.player}`,
+        },
+      ]),
+    ],
   };
 
   bot.sendMessage(chatId, message, {

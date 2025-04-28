@@ -7,18 +7,29 @@ import { sendHistory } from "../commands/history.js";
 import { sendContact } from "../commands/contact.js";
 import { sendNextMatch } from "../commands/nextmatch.js";
 import { sendResults } from "../commands/results.js";
+import { sendRoster } from "../commands/roster.js";
+import { sendPlayer, sendPlayerList } from "../commands/player.js";
 
 export function callbackHandler(bot) {
   bot.on("callback_query", async (callbackQuery) => {
     const chatId = callbackQuery.message.chat.id;
     const callbackData = callbackQuery.data;
 
-    // Responder conforme a escolha do usuário
+    console.log(`Callback recebido: ${callbackData}`);
+
+    // Tratar callbacks de jogadores
+    if (callbackData.startsWith("player_")) {
+      const nick = callbackData.replace("player_", "");
+      await bot.sendMessage(chatId, "Buscando detalhes do jogador...");
+      await sendPlayer(bot, chatId, nick);
+      sendBackButton(bot, chatId);
+      return;
+    }
+
     switch (callbackData) {
       case "voltar_menu":
         await bot.sendMessage(chatId, "Voltando ao menu...");
-
-        sendMenu(bot, chatId);
+        await sendMenu(bot, chatId);
         break;
 
       case "jogos":
@@ -31,7 +42,7 @@ export function callbackHandler(bot) {
         break;
 
       case "resultados":
-        await bot.sendMessage(
+        bot.sendMessage(
           chatId,
           "Aqui estão os resultados recentes da FURIA..."
         );
@@ -41,7 +52,7 @@ export function callbackHandler(bot) {
 
       case "roster":
         await bot.sendMessage(chatId, "Aqui está a lineup atual da FURIA...");
-
+        await sendRoster(bot, chatId);
         sendBackButton(bot, chatId);
         break;
 
@@ -50,7 +61,7 @@ export function callbackHandler(bot) {
           chatId,
           "Aqui está a lista dos jogadores da FURIA..."
         );
-
+        await sendPlayerList(bot, chatId);
         sendBackButton(bot, chatId);
         break;
 
@@ -60,18 +71,13 @@ export function callbackHandler(bot) {
           "Aqui estão as últimas notícias da FURIA..."
         );
         await sendNews(bot, chatId);
-
         sendBackButton(bot, chatId);
-
         break;
 
       case "historia":
         await bot.sendMessage(chatId, "Aqui está a história da FURIA...");
-
         await sendHistory(bot, chatId);
-
         sendBackButton(bot, chatId);
-
         break;
 
       case "ranking":
@@ -80,17 +86,13 @@ export function callbackHandler(bot) {
           "Aqui está o ranking atual da FURIA na HLTV..."
         );
         await sendRanking(bot, chatId);
-
         sendBackButton(bot, chatId);
-
         break;
 
       case "ajuda":
         await bot.sendMessage(chatId, "Aqui está como usar o bot...");
         await sendHelp(bot, chatId);
-
         sendBackButton(bot, chatId);
-
         break;
 
       case "contato":
@@ -98,18 +100,13 @@ export function callbackHandler(bot) {
           chatId,
           "Aqui estão as informações de contato..."
         );
-
-        sendContact(bot, chatId);
-
+        await sendContact(bot, chatId);
         sendBackButton(bot, chatId);
-
         break;
 
       default:
         await bot.sendMessage(chatId, "Escolha uma opção válida.");
+        break;
     }
-
-    // Acknowledge the callback query (fechar o 'loading' do botão)
-    await bot.answerCallbackQuery(callbackQuery.id);
   });
 }
