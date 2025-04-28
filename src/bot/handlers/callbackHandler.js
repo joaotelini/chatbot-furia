@@ -15,8 +15,6 @@ export function callbackHandler(bot) {
     const chatId = callbackQuery.message.chat.id;
     const callbackData = callbackQuery.data;
 
-    console.log(`Callback recebido: ${callbackData}`);
-
     // Tratar callbacks de jogadores
     if (callbackData.startsWith("player_")) {
       const nick = callbackData.replace("player_", "");

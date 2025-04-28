@@ -28,7 +28,6 @@ export async function sendPlayerList(bot, chatId) {
 }
 
 export async function sendPlayer(bot, chatId, nick) {
-  console.log(`Buscando jogador com nick: ${nick}`);
   const playerData = await getPlayer(nick);
 
   if (!playerData || !Array.isArray(playerData) || playerData.length === 0) {
